@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{502E69E3-79D1-4F7C-94C4-407F18DAE7B7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{01F1D603-4F41-4540-9DE0-DA41ED6A33A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchJobApp.Domain", "src\SearchJobApp.Domain\SearchJobApp.Domain.csproj", "{93DB59F2-82A2-4914-A5D7-02D92753795C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchJobApp.Application", "src\SearchJobApp.Application\SearchJobApp.Application.csproj", "{5156D27C-6C7E-4B06-81E3-64DBAC7FAF79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchJobApp.Persistence", "src\SearchJobApp.Persistence\SearchJobApp.Persistence.csproj", "{5C7EA6E3-9789-4DB4-8FDC-5E97E999A530}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchJobApp.Api", "src\SearchJobApp.Api\SearchJobApp.Api.csproj", "{B9429465-8925-458B-B495-E4C0A298504E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{93DB59F2-82A2-4914-A5D7-02D92753795C} = {502E69E3-79D1-4F7C-94C4-407F18DAE7B7}
+		{5156D27C-6C7E-4B06-81E3-64DBAC7FAF79} = {502E69E3-79D1-4F7C-94C4-407F18DAE7B7}
+		{5C7EA6E3-9789-4DB4-8FDC-5E97E999A530} = {502E69E3-79D1-4F7C-94C4-407F18DAE7B7}
+		{B9429465-8925-458B-B495-E4C0A298504E} = {502E69E3-79D1-4F7C-94C4-407F18DAE7B7}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{93DB59F2-82A2-4914-A5D7-02D92753795C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93DB59F2-82A2-4914-A5D7-02D92753795C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93DB59F2-82A2-4914-A5D7-02D92753795C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93DB59F2-82A2-4914-A5D7-02D92753795C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5156D27C-6C7E-4B06-81E3-64DBAC7FAF79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5156D27C-6C7E-4B06-81E3-64DBAC7FAF79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5156D27C-6C7E-4B06-81E3-64DBAC7FAF79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5156D27C-6C7E-4B06-81E3-64DBAC7FAF79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C7EA6E3-9789-4DB4-8FDC-5E97E999A530}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C7EA6E3-9789-4DB4-8FDC-5E97E999A530}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C7EA6E3-9789-4DB4-8FDC-5E97E999A530}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C7EA6E3-9789-4DB4-8FDC-5E97E999A530}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9429465-8925-458B-B495-E4C0A298504E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9429465-8925-458B-B495-E4C0A298504E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9429465-8925-458B-B495-E4C0A298504E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9429465-8925-458B-B495-E4C0A298504E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
