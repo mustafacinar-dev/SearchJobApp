@@ -13,7 +13,7 @@
 # Kurulum
 
 Uygulamayı local'de çalıştırmak isterseniz, docker-compose up ya da terminalden detach olarak container'ları ayağa kaldırmak isterseniz docker-compose up -d komutuyla tüm ekosistemi ayağa kaldırabilirsiniz.
-Tüm uygulamaları ayağa kaldırdıktan sonra postman'den endpointleri inceleyip test etmek isterseniz, [postman collection]([https://github.com/yusufyilmazfr/cqrs-design-pattern-java/blob/main/docker-compose.yml](https://github.com/mustafacinar7/SearchJobApp/blob/master/SearchJobApp%20Api.postman_collection.json)) ve [postman environment]([https://github.com/yusufyilmazfr/cqrs-design-pattern-java/blob/main/docker-compose.yml](https://github.com/mustafacinar7/SearchJobApp/blob/master/SearchJobApp%20Api.postman_environment.json)) dosyalarını postman'e import ederek hemen test etmeye başlayabilirsiniz.
+Tüm uygulamaları ayağa kaldırdıktan sonra postman'den endpointleri inceleyip test etmek isterseniz, [postman collection](https://github.com/mustafacinar7/SearchJobApp/blob/master/SearchJobApp%20Api.postman_collection.json) ve [postman environment](https://github.com/mustafacinar7/SearchJobApp/blob/master/SearchJobApp%20Api.postman_environment.json) dosyalarını postman'e import ederek hemen test etmeye başlayabilirsiniz.
 
 
 ```yml
