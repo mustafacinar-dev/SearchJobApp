@@ -9,6 +9,7 @@
 * Onion Architecture
 * CQRS Pattern
 * Mediator Pattern
+* Repository Pattern
 
 # Kurulum
 
@@ -275,9 +276,46 @@ curl -X 'GET' \
 ]
 ```
 
+### İlan Bilgisi Görüntüleme
+
+* Url: http://localhost:5130/api/post/{id}
+* Method: GET
+* Response: `PostDto`
+
+> Sistemdeki ilan bilgisini görüntüler.
+
+
+* Request:
+
+```curl
+curl -X 'GET' \
+  'http://localhost:5130/api/Post/dcbda8e3-52b9-4ac1-9d9d-82dd936230f7' \
+  -H 'accept: */*'
+```
+
+* Response:
+```json
+{
+  "id": "dcbda8e3-52b9-4ac1-9d9d-82dd936230f7",
+  "employerId": "2f6e8e75-aebe-4270-b240-7a34bdbe7c95",
+  "employerTitle": "Kariyer.Net",
+  "title": "Software Engineer",
+  "message": "Software Engineer İş İlanı",
+  "qualityScore": 3,
+  "additionalMessage": "Software Engineer İş İlanı Yan haklar ek bilgiler vs.",
+  "workType": "FullTime",
+  "positionLevel": "Specialist",
+  "salary": null,
+  "startDate": "2023-06-19T06:57:25.2849873+00:00",
+  "endDate": "2023-07-04T06:57:25.2849727+00:00",
+  "createdDate": "2023-06-19T06:57:25.2849985+00:00",
+  "modifiedDate": "2023-06-19T06:57:25.2850089+00:00"
+}
+```
+
 ### İşverene Ait İlanları Listelemek
 
-* Url: http://localhost:5130/api/{employerId}/posts
+* Url: http://localhost:5130/api/Employer/{id}/posts
 * Method: GET
 * Response: `List<EmployerWithPostsDto>`
 
@@ -326,7 +364,7 @@ curl -X 'GET' \
 
 ### İşveren Bilgisi Görüntüleme
 
-* Url: http://localhost:5130/api/employer/{employerId}
+* Url: http://localhost:5130/api/employer/{id}
 * Method: GET
 * Response: `EmployerDto`
 
