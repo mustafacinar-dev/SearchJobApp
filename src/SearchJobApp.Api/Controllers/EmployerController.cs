@@ -16,6 +16,12 @@ public class EmployerController : ControllerBase
         _mediator = mediator;
     }
 
+    [HttpPost]
+    public async Task<IActionResult> PostAsync(CreateEmployerCommand command)
+    {
+        return Ok(await _mediator.Send(command));
+    }
+
     [HttpGet]
     public async Task<IActionResult> GetAllAsync()
     {
@@ -23,22 +29,16 @@ public class EmployerController : ControllerBase
     }
 
     [HttpGet]
-    [Route("{employerId}")]
-    public async Task<IActionResult> GetEmployerAsync(string employerId)
+    [Route("{id}")]
+    public async Task<IActionResult> GetAsync(string id)
     {
-        return Ok(await _mediator.Send(new GetEmployerQuery() { EmployerId = Guid.Parse(employerId) }));
-    }
-    
-    [HttpGet]
-    [Route("{employerId}/posts")]
-    public async Task<IActionResult> GetEmployerWithPostsAsync(string employerId)
-    {
-        return Ok(await _mediator.Send(new GetEmployerWithPostsQuery { EmployerId = Guid.Parse(employerId) }));
+        return Ok(await _mediator.Send(new GetEmployerQuery() { EmployerId = Guid.Parse(id) }));
     }
 
-    [HttpPost]
-    public async Task<IActionResult> PostAsync(CreateEmployerCommand command)
+    [HttpGet]
+    [Route("{id}/posts")]
+    public async Task<IActionResult> GetEmployerWithPostsAsync(string id)
     {
-        return Ok(await _mediator.Send(command));
+        return Ok(await _mediator.Send(new GetEmployerWithPostsQuery { EmployerId = Guid.Parse(id) }));
     }
 }
