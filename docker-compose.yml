@@ -3,7 +3,7 @@ version: '3.8'
 services:
   s_searchjobapp_postgres:
     hostname: postgres
-    container_name: c_searchjobapp_postgres
+    container_name: postgres
     image: postgres
     environment:
       POSTGRES_USER: postgres
@@ -12,32 +12,24 @@ services:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
       - "5432:5432"
-    networks:
-      - searchjobapp-backend
-    restart: always
+    restart: unless-stopped
 
-#  s_searchjobapp_rabbitmq:
-#    hostname: rabbitmq
-#    container_name: c_searchjobapp_rabbitmq
-#    image: rabbitmq:3-management
-#    volumes:
-#      - searchjobapp_rabbitmq_data:/var/lib/rabbitmq
-#    environment:
-#      RABBITMQ_DEFAULT_USER: rabbitmq
-#      RABBITMQ_DEFAULT_PASS: rabbitmq@123
-#    ports:
-#      - "5672:5672"
-#      - "15672:15672"
-#    networks:
-#      - searchjobapp-backend
-#    restart: always
+  s_searchjobapp_rabbitmq:
+    hostname: rabbitmq
+    container_name: rabbitmq
+    image: rabbitmq:3-management
+    environment:
+      RABBITMQ_DEFAULT_USER: rabbitmq
+      RABBITMQ_DEFAULT_PASS: rabbitmq@123
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    restart: unless-stopped
 
   s_searchjobapp_elasticsearch:
     hostname: elasticsearch
-    container_name: c_searchjobapp_elasticsearch
+    container_name: elasticsearch
     image: elasticsearch:7.17.10
-    volumes:
-      - searchjobapp_elasticsearch_data:/usr/share/elasticsearch/data
     environment:
       bootstrap.memory_lock: true
       ES_JAVA_OPTS: "-Xmx512m -Xms512m"
@@ -46,13 +38,11 @@ services:
     ports:
       - "9300:9300"
       - "9200:9200"
-    networks:
-      - searchjobapp-backend
-    restart: always
+    restart: unless-stopped
   
   s_searchjobapp_api:
     hostname: searchjobapp
-    container_name: c_searchjobapp_api
+    container_name: searchjobapp_api
     image: searchjobappapi
     environment:
       - ASPNETCORE_URLS=http://+:5130
@@ -62,14 +52,4 @@ services:
       dockerfile: src/SearchJobApp.Api/Dockerfile
     ports:
       - "5130:5130"
-    networks:
-      - searchjobapp-backend
-    restart: always
-
-networks:
-  searchjobapp-backend:
-    driver: bridge
-
-volumes:
-  searchjobapp_rabbitmq_data:
-  searchjobapp_elasticsearch_data:
+    restart: unless-stopped
